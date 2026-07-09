@@ -1,0 +1,6 @@
+{
+  "name": "Hosaco96 Alumni Hub",
+  "description": "An honors ledger, membership platform, and community impact site for the Holy Saviour's College Class of 1996.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
