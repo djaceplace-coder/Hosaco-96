@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import PageWrapper from '../components/PageWrapper';
@@ -94,31 +95,33 @@ export default function Programs() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
               >
-                <Card className="overflow-hidden group border-0 shadow-lg" hoverLift>
-                  <div className={`grid md:grid-cols-2 gap-0 ${idx % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
-                    <div className={`order-2 ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'} p-10 md:p-16 flex flex-col justify-center`}>
-                      <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${program.bg} ${program.color} text-sm font-bold tracking-wider uppercase mb-6 w-fit`}>
-                        <program.icon size={18} />
-                        {program.stats}
+                <Link to={`/programs/${program.id}`} className="block group/link">
+                  <Card className="overflow-hidden group border-0 shadow-lg" hoverLift>
+                    <div className={`grid md:grid-cols-2 gap-0 ${idx % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+                      <div className={`order-2 ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'} p-10 md:p-16 flex flex-col justify-center`}>
+                        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${program.bg} ${program.color} text-sm font-bold tracking-wider uppercase mb-6 w-fit`}>
+                          <program.icon size={18} />
+                          {program.stats}
+                        </div>
+                        <h2 className="font-serif text-3xl md:text-4xl text-ink-navy mb-6 group-hover/link:text-harmattan-gold transition-colors">{program.title}</h2>
+                        <p className="text-lg text-ink-navy/80 mb-8 leading-relaxed">
+                          {program.desc}
+                        </p>
+                        <div className="mt-auto">
+                          <Button variant="outline" className="shadow-md shadow-ink-navy/5 pointer-events-none">View Program Details</Button>
+                        </div>
                       </div>
-                      <h2 className="font-serif text-3xl md:text-4xl text-ink-navy mb-6">{program.title}</h2>
-                      <p className="text-lg text-ink-navy/80 mb-8 leading-relaxed">
-                        {program.desc}
-                      </p>
-                      <div className="mt-auto">
-                        <Button variant="donate" className="shadow-md shadow-brick-clay/20">Donate to this program</Button>
+                      <div className={`order-1 ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'} h-72 md:h-auto relative overflow-hidden`}>
+                        <div className="absolute inset-0 bg-ink-navy/10 mix-blend-multiply z-10 transition-opacity group-hover:opacity-0 duration-500" />
+                        <img 
+                          src={program.img} 
+                          alt={program.title} 
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                       </div>
                     </div>
-                    <div className={`order-1 ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'} h-72 md:h-auto relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-ink-navy/10 mix-blend-multiply z-10 transition-opacity group-hover:opacity-0 duration-500" />
-                      <img 
-                        src={program.img} 
-                        alt={program.title} 
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
