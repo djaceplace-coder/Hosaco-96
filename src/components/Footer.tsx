@@ -42,7 +42,7 @@ export default function Footer() {
             <h4 className="font-serif font-semibold text-lg mb-6 text-white">Involvement</h4>
             <ul className="space-y-3">
               <li><Link to="/get-involved" className="text-sm text-parchment/80 hover:text-harmattan-gold transition-colors">Donate</Link></li>
-              <li><Link to="/volunteer" className="text-sm text-parchment/80 hover:text-harmattan-gold transition-colors">Volunteer</Link></li>
+              <li><Link to="/get-involved" className="text-sm text-parchment/80 hover:text-harmattan-gold transition-colors">Volunteer</Link></li>
               <li><Link to="/careers" className="text-sm text-parchment/80 hover:text-harmattan-gold transition-colors">Careers</Link></li>
               <li><Link to="/transparency" className="text-sm text-parchment/80 hover:text-harmattan-gold transition-colors">Transparency</Link></li>
             </ul>

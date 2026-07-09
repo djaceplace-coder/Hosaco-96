@@ -20,5 +20,6 @@
     background-color: var(--color-parchment);
     color: var(--color-ink-navy);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 }
